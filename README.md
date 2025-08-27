@@ -1,12 +1,3 @@
-¡Por supuesto\! Basado en toda nuestra conversación, he creado un `README.md` completo y profesional para tu proyecto.
-
-Este archivo no solo describe el proyecto, sino que también sirve como una guía de instalación y uso para ti en el futuro o para cualquier otra persona que pueda colaborar.
-
------
-
-Simplemente copia y pega el siguiente texto en un nuevo archivo llamado `README.md` en la raíz de tu proyecto.
-
-````markdown
 # Analizador de Finanzas Personales con Gemini (PFM-Gemini)
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)
@@ -27,25 +18,30 @@ Este proyecto utiliza el poder de los modelos generativos de Google (Gemini) par
     * Clasificar transacciones por categoría.
 * **Modular y Personalizable**: El script de Python está diseñado para ser fácilmente adaptable a diferentes necesidades de análisis.
 
+---
+
 ## ⚙️ Requisitos Previos
 
 Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
-* [Python 3.9](https.python.org/downloads/) o superior.
+* [Python 3.9](https://www.python.org/downloads/) o superior.
 * [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) (para la herramienta `gcloud`).
 * Una cuenta de Google Cloud con un proyecto activo.
+
+---
 
 ## 🚀 Instalación y Configuración
 
 Sigue estos pasos para poner en marcha el proyecto:
 
 ### 1. Clona el Repositorio
+
 ```bash
 git clone <URL-de-tu-repositorio>
 cd pfm-gemini
-````
+```
 
-### 2\. Configura el Entorno Virtual
+### 2. Configura el Entorno Virtual
 
 Es una buena práctica trabajar dentro de un entorno virtual.
 
@@ -60,7 +56,7 @@ source .venv/Scripts/activate
 # source .venv/bin/activate
 ```
 
-### 3\. Instala las Dependencias
+### 3. Instala las Dependencias
 
 Crea un archivo `requirements.txt` con el siguiente contenido:
 
@@ -78,25 +74,29 @@ Luego, instálalo usando pip:
 pip install -r requirements.txt
 ```
 
-### 4\. Configura tu Proyecto de Google Cloud
+### 4. Configura tu Proyecto de Google Cloud
 
 1.  **Habilita las APIs**: En tu proyecto de Google Cloud, asegúrate de tener habilitadas la **Gmail API** y la **Vertex AI API**.
 2.  **Configura la Pantalla de Consentimiento OAuth**:
-      * Ve a `APIs y servicios > Pantalla de consentimiento de OAuth`.
-      * Configúrala como **Externa** y agrega tu propia cuenta de correo como **usuario de prueba**.
+    * Ve a `APIs y servicios > Pantalla de consentimiento de OAuth`.
+    * Configúrala como **Externa** y agrega tu propia cuenta de correo como **usuario de prueba**.
 3.  **Obtén las Credenciales**:
-      * Ve a `APIs y servicios > Credenciales`.
-      * Crea un **ID de cliente de OAuth** de tipo **"Aplicación de escritorio"**.
-      * Descarga el archivo JSON y **renómbralo a `credentials.json`**.
-      * **¡IMPORTANTE\!** Coloca este archivo en la raíz de tu proyecto. No lo subas a Git.
+    * Ve a `APIs y servicios > Credenciales`.
+    * Crea un **ID de cliente de OAuth** de tipo **"Aplicación de escritorio"**.
+    * Descarga el archivo JSON y **renómbralo a `credentials.json`**.
+    * **¡IMPORTANTE!** Coloca este archivo en la raíz de tu proyecto. No lo subas a Git.
 
-### 5\. Autenticación Local
+### 5. Autenticación Local
 
 1.  **Autentica la gcloud CLI**: Este paso le da permiso a tu script para usar la API de Gemini (Vertex AI).
+
     ```bash
     gcloud auth application-default login
     ```
+
 2.  **Autoriza el Acceso a Gmail**: La primera vez que ejecutes el script `analizador_correos.py`, se abrirá una ventana en tu navegador pidiéndote que autorices el acceso a tu cuenta de Gmail. Al completarlo, se creará un archivo `token.json` en tu proyecto.
+
+---
 
 ## 💻 Uso
 
@@ -119,16 +119,17 @@ results = service.users().messages().list(
 ).execute()
 ```
 
+---
+
 ## 🔒 Seguridad
 
 La seguridad de tus credenciales y tokens es fundamental.
 
-  * El archivo `.gitignore` está configurado para **ignorar `credentials.json` y `token.json`**.
-  * **Nunca** compartas estos archivos ni los subas a repositorios públicos. Contienen información sensible que da acceso a tus servicios de Google.
+* El archivo `.gitignore` está configurado para **ignorar `credentials.json` y `token.json`**.
+* **Nunca** compartas estos archivos ni los subas a repositorios públicos. Contienen información sensible que da acceso a tus servicios de Google.
+
+---
 
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
-
-```
-```
