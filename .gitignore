@@ -1,0 +1,21 @@
+# Archivos de credenciales y tokens de Google
+# ¡NUNCA subas estos archivos a un repositorio público!
+credentials.json
+token.json
+
+# Entornos virtuales de Python
+# Carpetas comunes para entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de configuración de IDEs
+.vscode/
+.idea/
